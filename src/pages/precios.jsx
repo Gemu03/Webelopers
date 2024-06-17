@@ -14,7 +14,7 @@ function Precios(){
                     <li>Software</li>
                     <li>Marketing</li>
                 </ul>
-                <section>
+                <section className="cardsPrecios">
                     <PruebaGratis>
                         <h3>Prueba gratuita</h3>
                         <h2>
@@ -93,6 +93,21 @@ function Precios(){
                     </tr>
                 </tbody>
             </Caracteristicas>
+
+            <Premium>
+                <h3>
+                    Con premium Puedes
+                </h3>
+
+                <section className="gridPremium">
+                    <div>Asistencia inmediata</div>
+                    <div>Asistencia inmediata</div>
+                    <div>Asistencia inmediata</div>
+                    <div>Asistencia inmediata</div>
+                    <div>Asistencia inmediata</div>
+                    <div>Asistencia inmediata</div>
+                </section>
+            </Premium>
         </PagPrecios>
         
     );
@@ -322,6 +337,42 @@ const Caracteristicas = styled.table`
             & td{
                 padding: 1rem;
             }
+        }
+    }
+`;
+
+const Premium = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    color: ${ColorPalette.white};
+    gap: 2em;
+    h3{
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 0;
+    }
+    section.gridPremium{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+        gap: 1em;
+        margin-top: 2rem;
+        div{
+            aspect-ratio: 4/3;
+            padding: 0.4em;
+            background-color: ${ColorPalette.contenedoresOscuro};
+            border: 2px solid ${ColorPalette.contenedores};
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 2rem;
+            font-weight: 700;
         }
     }
 `;
