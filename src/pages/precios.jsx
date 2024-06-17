@@ -8,46 +8,46 @@ function Precios(){
             <Planes>
                 <h1>Elija un plan</h1>
                 <p>Únete a los suscriptores para una lluvia de ideas sin límites.</p>
-                <ul>
+                <ul className="botonesHorizontales">
                     <li className="foco">App Móvil</li> 
                     <li>Página Web</li>
                     <li>Software</li>
                     <li>Marketing</li>
                 </ul>
                 <section>
-                <PruebaGratis>
-                        <h3>Prueba gratuita</h3>
-                        <h2>
-                            $0
-                        </h2>
-                        <input type="button" value="Comenzar"/>
-                        <ul>
-                            <li>4 Visitas</li>
-                            <li>1 Dominio</li>
-                            <li>Servicio 1 año</li>
-                            <li>Soporte 24/7</li>
-                        </ul>
-                    </PruebaGratis>
                     <PruebaGratis>
                         <h3>Prueba gratuita</h3>
                         <h2>
                             $0
                         </h2>
                         <input type="button" value="Comenzar"/>
-                        <ul>
+                        <ul className="listaInterna">
                             <li>4 Visitas</li>
                             <li>1 Dominio</li>
                             <li>Servicio 1 año</li>
                             <li>Soporte 24/7</li>
                         </ul>
                     </PruebaGratis>
+                    <PrecioPrincipal>
+                        <h3>Prueba gratuita</h3>
+                        <h2>
+                            $0
+                        </h2>
+                        <input type="button" value="Comenzar"/>
+                        <ul className="listaInterna">
+                            <li>4 Visitas</li>
+                            <li>1 Dominio</li>
+                            <li>Servicio 1 año</li>
+                            <li>Soporte 24/7</li>
+                        </ul>
+                    </PrecioPrincipal>
                     <PruebaGratis>
                         <h3>Prueba gratuita</h3>
                         <h2>
                             $0
                         </h2>
                         <input type="button" value="Comenzar"/>
-                        <ul>
+                        <ul className="listaInterna">
                             <li>4 Visitas</li>
                             <li>1 Dominio</li>
                             <li>Servicio 1 año</li>
@@ -104,6 +104,7 @@ const ColorPalette = {
     background: "#0d1117",
     white: "#fff",
     contenedores: "#2F353C",
+    contenedoresOscuro: "#161C22",
     morado: "#9F56FD",
     borde: "#2F353C",
     grisClaro: "#BEB3B9",
@@ -116,6 +117,9 @@ const PagPrecios = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    section{
+        margin: 10em;
+    }
 `;
 
 
@@ -126,18 +130,19 @@ const Planes = styled.div`
     justify-content: center;
     padding: 2rem 0;
     color: ${ColorPalette.white};
-    & h1{
+    h1{
         font-size: 4rem;
         font-weight: 400;
         margin: 0;
     }
-    & p{
+    p{
         font-size: 1.3rem;
         margin: 1em;
         margin-bottom: 2em;
         color: ${ColorPalette.grisClaro};
     }
-    & ul{
+    ul.botonesHorizontales{
+        z-index: 2;
         text-align: left;
         display: flex;
         justify-content: space-around;
@@ -145,16 +150,17 @@ const Planes = styled.div`
         background-color: ${ColorPalette.white};
         color: black;
         border-radius: 10px;
-        padding: 0;
+        padding: 0.3em;
         margin: 0;
-        height: 3em;
+        height: 2em;
         overflow: hidden;
-        & li{
+        li{
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0.3em 1.5em;
             font-size: 1.2rem;
+            border-radius: calc(10px/2);
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
@@ -163,21 +169,22 @@ const Planes = styled.div`
                 background-color: ${ColorPalette.morado};
             }
         }
-        & li.foco{
+        li.foco{
             color: #f8f8f8;
-            background-color: #333;
+            background-color: ${ColorPalette.morado};
         }
     }
-    & section{
+    section{
         display: flex;
         justify-content: center;
-        gap: 4em;
+        gap: 3em;
         align-items: center;
         margin-top: 2rem;
-        & div{
-            border: 2px solid ${ColorPalette.white};
+        div{
+            border: 2px solid ${ColorPalette.contenedores};
+            background-color: ${ColorPalette.contenedoresOscuro};
         }
-        & div>ul{
+        div>ul{
             display: flex;
             flex-direction: column;
             & li{
@@ -192,45 +199,111 @@ const Planes = styled.div`
 `;
 
 const PruebaGratis = styled.div`
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    align-items: start;
+    padding: 1em 2rem;
     background-color: #333;
     color: #f8f8f8;
     border-radius: 10px;
-    & h3{
+    width: 13em;
+
+    h3{
         font-size: 1.5rem;
+        font-weight: 400;
     }
-    & h2{
+    h2{
         font-size: 3rem;
+        margin: 0;
+        margin-bottom: 1em;
     }
-    & ul{
+    ul.listaInterna{
+        padding: 2em 0!important;
         list-style: none;
         padding: 0;
         margin: 0;
+        height: unset;
+        background-color: unset;
+        color: white;
+        list-style: disc !important;
         & li{
-            padding: 1rem;
+            padding: 0.1rem;
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 400;
         }
     }
     input{
-        padding: 1rem 2rem;
-        margin-top: 1rem;
-        border: none;
-        background-color: #f8f8f8;
-        color: #333;
+        width: 100%;
+        height: 2em;
         font-size: 1.2rem;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
         cursor: pointer;
         transition: 0.3s;
         &:hover{
-            color: #f8f8f8;
-            background-color: #333;
+            background-color: ${ColorPalette.morado};
+            color: white;
         }
     }
 `;
+
+const PrecioPrincipal = styled.div`
+    scale: 1.05;
+    box-shadow: 0px 0px 152px 59px #9e56fdc5, 0px 0px 33px -1px rgba(237,46,58,1);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1em 2rem;
+    background-color: #333;
+    color: #f8f8f8;
+    border-radius: 10px;
+    width: 13em;
+
+    h3{
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    h2{
+        font-size: 3rem;
+        margin: 0;
+        margin-bottom: 1em;
+    }
+    ul.listaInterna{
+        padding: 2em 0!important;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: unset;
+        background-color: unset;
+        color: white;
+        list-style: disc !important;
+        & li{
+            padding: 0.1rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+    }
+    input{
+        width: 100%;
+        height: 2em;
+        font-size: 1.2rem;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            background-color: ${ColorPalette.morado};
+            color: white;
+        }
+    }
+`;
+
 
 const Caracteristicas = styled.table`
     width: 60%;
