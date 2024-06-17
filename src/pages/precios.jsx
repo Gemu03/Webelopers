@@ -1,8 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
-function Precios(){
+function Precios() {
+    useEffect(() => {
+        const cardsContainer = document.querySelector(".cardsPrecios");
+        if (cardsContainer) {
+            const cards = document.querySelectorAll(".cardsPrecios > div");
+
+            const handleMouseMove = (e) => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    card.style.setProperty("--x", `${x}px`);
+                    card.style.setProperty("--y", `${y}px`);
+                    
+                });
+            };
+            cardsContainer.addEventListener("mousemove", handleMouseMove);
+            return () => {
+                cardsContainer.removeEventListener("mousemove", handleMouseMove);
+            };
+        } else {
+            console.error("El elemento cardsContainer no se encontró");
+        }
+    }, []);
     return (
         <PagPrecios>
             <Planes>
@@ -115,6 +138,7 @@ function Precios(){
 
 export default Precios;
 
+
 const ColorPalette = {
     background: "#0d1117",
     white: "#fff",
@@ -139,6 +163,7 @@ const PagPrecios = styled.div`
 
 
 const Planes = styled.div`
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,6 +171,7 @@ const Planes = styled.div`
     padding: 2rem 0;
     color: ${ColorPalette.white};
     h1{
+        z-index: 10;
         font-size: 4rem;
         font-weight: 400;
         margin: 0;
@@ -196,8 +222,28 @@ const Planes = styled.div`
         align-items: center;
         margin-top: 2rem;
         div{
+            position: relative;
             border: 2px solid ${ColorPalette.contenedores};
             background-color: ${ColorPalette.contenedoresOscuro};
+        }
+        div::before{ /* TODO:  */
+            content: "";
+            z-index: 1;
+            position: absolute;
+            top: var(--y);
+            left: var(--x);
+            border-radius: inherit;
+            background: radial-gradient(#04068d, transparent, transparent);
+            width: 10em;
+            height: 10em;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+        }
+        div:hover::before{
+            opacity: 1;
+        }
+        div:not(:hover::before){
+            opacity: 0;
         }
         div>ul{
             display: flex;
@@ -223,18 +269,22 @@ const PruebaGratis = styled.div`
     background-color: #333;
     color: #f8f8f8;
     border-radius: 10px;
+    overflow: hidden;
     width: 13em;
 
     h3{
         font-size: 1.5rem;
         font-weight: 400;
+        z-index: 10;
     }
     h2{
         font-size: 3rem;
+        z-index: 10;
         margin: 0;
         margin-bottom: 1em;
     }
     ul.listaInterna{
+        z-index: 10;
         padding: 2em 0!important;
         list-style: none;
         padding: 0;
@@ -251,6 +301,7 @@ const PruebaGratis = styled.div`
     }
     input{
         width: 100%;
+        z-index: 10;
         height: 2em;
         font-size: 1.2rem;
         background-color: white;
@@ -357,8 +408,9 @@ const Premium = styled.div`
     section.gridPremium{
         width: 80vw;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-        gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2em;
         margin-top: 2rem;
         div{
             aspect-ratio: 4/3;
@@ -366,7 +418,7 @@ const Premium = styled.div`
             background-color: ${ColorPalette.contenedoresOscuro};
             border: 2px solid ${ColorPalette.contenedores};
             color: white;
-            border-radius: 10px;
+            border-radius: 20px;
             text-align: center;
             display: flex;
             justify-content: center;
