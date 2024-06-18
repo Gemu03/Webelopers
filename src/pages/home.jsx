@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Section from "../components/home/section";
 
 function Home(){
+
     return (
+        <>
         <Home1>
             <Home1ContentBox>
                 <Home1TextContent>
@@ -21,6 +24,10 @@ function Home(){
                 <Buttonlink2 to="/">Cotiza nuestros planes</Buttonlink2>
             </Home1Buttons>
         </Home1>
+        <div>
+            <Section bgColor="#0d1117" />
+        </div>
+        </>
     );
 }
 
