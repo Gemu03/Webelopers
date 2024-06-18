@@ -6,19 +6,33 @@ function Precios() {
         const cardsContainer = document.querySelector(".cardsPrecios");
         if (cardsContainer) {
             const cards = document.querySelectorAll(".cardsPrecios > div");
-
+    
             const handleMouseMove = (e) => {
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
-
-                    card.style.setProperty("--x", `${x}px`);
-                    card.style.setProperty("--y", `${y}px`);
-                    
+    
+                    const distanceFromCenterX = Math.abs(x - rect.width / 2);
+                    const distanceFromCenterY = Math.abs(y - rect.height / 2);
+                    const maxDistanceX = rect.width / 2;
+                    const maxDistanceY = rect.height / 2;
+    
+                    // Define a threshold distance
+                    const threshold = 20; // Adjust this value as needed
+    
+                    if (distanceFromCenterX > maxDistanceX + threshold || distanceFromCenterY > maxDistanceY + threshold) {
+                        card.style.removeProperty("--x");
+                        card.style.removeProperty("--y");
+                    } else {
+                        card.style.setProperty("--x", `${x}px`);
+                        card.style.setProperty("--y", `${y}px`);
+                    }
                 });
             };
+    
             cardsContainer.addEventListener("mousemove", handleMouseMove);
+    
             return () => {
                 cardsContainer.removeEventListener("mousemove", handleMouseMove);
             };
@@ -131,7 +145,64 @@ function Precios() {
                     <div>Asistencia inmediata</div>
                 </section>
             </Premium>
+
+            <ContenedorAcordion>
+                <div className="acordion">
+                <input 
+                        type="checkbox" 
+                        name="acordeon" 
+                        id="btn-acordeon1" 
+                        className="btn-acordeon"
+                    />
+                    <label htmlFor="btn-acordeon1">
+                        ¿Qué incluye mi plan premium incluye mi plan premium incluye mi plan premium?
+                    </label>
+                    <div className="contenido-acordeon">
+                        ¿Qué incluye mi plan premium incluye mi plan premium incluye mi plan premium?
+                    </div>
+
+                    <input /* 2 */
+                        type="checkbox" 
+                        name="acordeon" 
+                        id="btn-acordeon2" 
+                        className="btn-acordeon"
+                    />
+                    <label htmlFor="btn-acordeon2">
+                        ¿Qué incluye mi plan premium incluye mi plan premium incluye mi plan premium?incluye mi plan premium incluye mi plan premium?
+                    </label>
+                    <div className="contenido-acordeon">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nulla unde nesciunt consequatur cupiditate illum obcaecati expedita. Temporibus nostrum quae autem blanditiis quis dolor libero et, illum, mollitia nisi eius.
+                    </div>
+
+                    <input /* 3 */
+                        type="checkbox" 
+                        name="acordeon" 
+                        id="btn-acordeon3" 
+                        className="btn-acordeon"
+                    />
+                    <label htmlFor="btn-acordeon3">
+                        ¿Qué incluye mi plan premium incluye mi plan premium incluye mi plan premium?
+                    </label>
+                    <div className="contenido-acordeon">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nulla unde nesciunt consequatur cupiditate illum obcaecati expedita. Temporibus nostrum quae autem blanditiis quis dolor libero et, illum, mollitia nisi eius.
+                    </div>
+
+                    <input /* 4 */
+                        type="checkbox" 
+                        name="acordeon" 
+                        id="btn-acordeon4" 
+                        className="btn-acordeon"
+                    />
+                    <label htmlFor="btn-acordeon4">
+                        ¿Qué incluye mi plan premium incluye mi plan premium incluye mi plan premium?
+                    </label>
+                    <div className="contenido-acordeon">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nulla unde nesciunt consequatur cupiditate illum obcaecati expedita. Temporibus nostrum quae autem blanditiis quis dolor libero et, illum, mollitia nisi eius.
+                    </div>
+                </div>
+            </ContenedorAcordion>
         </PagPrecios>
+
         
     );
 }
@@ -156,6 +227,7 @@ const PagPrecios = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
     section{
         margin: 10em;
     }
@@ -183,7 +255,7 @@ const Planes = styled.div`
         color: ${ColorPalette.grisClaro};
     }
     ul.botonesHorizontales{
-        z-index: 2;
+        z-index: 12;
         text-align: left;
         display: flex;
         justify-content: space-around;
@@ -236,6 +308,7 @@ const Planes = styled.div`
             background: radial-gradient(#04068d, transparent, transparent);
             width: 10em;
             height: 10em;
+            z-index: 0;
             opacity: 0;
             transform: translate(-50%, -50%);
         }
@@ -260,7 +333,7 @@ const Planes = styled.div`
 `;
 
 const PruebaGratis = styled.div`
-    z-index: 10;
+    z-index: 11;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -319,7 +392,7 @@ const PruebaGratis = styled.div`
 const PrecioPrincipal = styled.div`
     scale: 1.05;
     box-shadow: 0px 0px 152px 59px #9e56fdc5, 0px 0px 33px -1px rgba(237,46,58,1);
-    z-index: 1;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -328,18 +401,22 @@ const PrecioPrincipal = styled.div`
     background-color: #333;
     color: #f8f8f8;
     border-radius: 10px;
+    overflow: hidden;
     width: 13em;
 
     h3{
         font-size: 1.5rem;
         font-weight: 400;
+        z-index: 10;
     }
     h2{
         font-size: 3rem;
+        z-index: 10;
         margin: 0;
         margin-bottom: 1em;
     }
     ul.listaInterna{
+        z-index: 10;
         padding: 2em 0!important;
         list-style: none;
         padding: 0;
@@ -356,6 +433,7 @@ const PrecioPrincipal = styled.div`
     }
     input{
         width: 100%;
+        z-index: 10;
         height: 2em;
         font-size: 1.2rem;
         background-color: white;
@@ -369,7 +447,6 @@ const PrecioPrincipal = styled.div`
         }
     }
 `;
-
 
 const Caracteristicas = styled.table`
     width: 60%;
@@ -428,3 +505,75 @@ const Premium = styled.div`
         }
     }
 `;
+
+const ContenedorAcordion = styled.div`
+    width: 100vw;
+    max-width: 60em;
+    margin: auto;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2{
+        text-align: center;
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+    div.acordion{
+        display: flex;
+        flex-direction: column;
+        gap: 0.6em;
+        background-color: transparent;
+        
+        label{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:100%;
+            max-width: 70vw;
+            padding: 0.6em 3em;
+            background-color: ${ColorPalette.contenedoresOscuro};
+            border: 2px solid ${ColorPalette.borde};
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease;
+            font-size: 1.3em;
+            text-align: left;
+        }
+        label::after{
+            content: "▼";
+
+            margin-left: 3em;
+            font-size: 1.5em;
+        }
+        label:hover{
+            background-color: ${ColorPalette.contenedores}
+        }
+        div.contenido-acordeon{
+            padding: 0;
+            margin: 0 20px;
+            overflow: hidden;
+            transition: all 0ms.3s ease;
+            max-height: 0em;
+        }
+        input.btn-acordeon{
+            display:none;
+        }
+        input.btn-acordeon:checked + label + div.contenido-acordeon{
+            max-height: 100em;
+            padding: 1em;
+            margin: 1em 0;
+            transition: 0.3s;
+        }
+        input.btn-acordeon:not(:checked) + label + div.contenido-acordeon{
+            max-height: 0em;
+            padding: 0;
+            margin: 0;
+            transition: 0.2s;
+        }
+        input[type="checkbox"]:checked + label::after {
+            content: "▲";
+        }
+    }
+`
