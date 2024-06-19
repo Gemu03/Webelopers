@@ -626,3 +626,4 @@ const MasInformacion = styled.div`
         }
     }
 `
+

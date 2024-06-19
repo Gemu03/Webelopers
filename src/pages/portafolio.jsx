@@ -74,7 +74,8 @@ const Imagina = styled.section`
     padding: 3em;
     margin: 0em;
     max-width: 40vw;
-    box-shadow: 0px 0px 83px 105px ${ColorPalette.morado} inset;
+    background: rgb(159,86,253);
+    background: radial-gradient(circle, rgba(159,86,253,1) 10%, rgba(159,86,253,0) 58%);
     h1{
         text-align: center;
         font-size: 4em;
