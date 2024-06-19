@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 import Home from './pages/home';
 import Precios from './pages/precios';
+import Portafolio from './pages/portafolio';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/precios" element={<Precios />} />
+        <Route path="/portafolio" element={<Portafolio />} />
       </Routes>
       <Footer />
     </div>

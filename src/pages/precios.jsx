@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-
+/* Falta hacer la tabla, y arreglar la flechita de premium */
+/* Cambiar color card shadow y  */
 function Precios() {
     useEffect(() => {
         const cardsContainer = document.querySelector(".cardsPrecios");
@@ -201,6 +202,16 @@ function Precios() {
                     </div>
                 </div>
             </ContenedorAcordion>
+
+            <MasInformacion>
+                <h2>
+                    ¿Interesado en más información?
+                </h2>
+                <p>
+                    Diligencia nuestro formulario para conocerte mejor
+                </p>
+                <input type="button" value="Llenar formulario"/>
+            </MasInformacion>
         </PagPrecios>
 
         
@@ -574,6 +585,44 @@ const ContenedorAcordion = styled.div`
         }
         input[type="checkbox"]:checked + label::after {
             content: "▲";
+        }
+    }
+`
+
+const MasInformacion = styled.div`
+    width: 70vw;
+    margin-top: 7em;
+    max-width: 70vw;
+    background-color: ${ColorPalette.contenedoresOscuro};
+    border: 2px solid ${ColorPalette.contenedores};
+    border-radius: 10px;
+    color: white;
+    padding: 3em;
+    h2{
+        font-size: 2.8em;
+        margin: 0;
+        font-weight: 400;
+    }
+    p{
+        color: ${ColorPalette.grisClaro};
+        font-size: 1.2em;
+        margin: 0;
+        font-weight: 500;
+    }
+    input{
+        margin-top: 3em;
+        width: 14em;
+        height: 2.5em;
+        font-size: 1.2em;
+        background-color: ${ColorPalette.morado};
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            background-color: ${ColorPalette.contenedores};
+            color: white;
         }
     }
 `
