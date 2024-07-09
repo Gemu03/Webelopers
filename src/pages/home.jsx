@@ -24,8 +24,20 @@ function Home(){
                 <Buttonlink2 to="/">Cotiza nuestros planes</Buttonlink2>
             </Home1Buttons>
         </Home1>
+        <Home2>
+            <Home2Title>
+                ¿Por qué elegirnos?
+            </Home2Title>
+        </Home2>
         <div>
-            <Section bgColor="#0d1117" />
+            <Section bgColor="#0d1117" texts={[
+            "Nos conoces por redes o te referencia un amigo.",
+            "Hablamos y aprendemos acerca de ti.",
+            "Te mostramos, cómo podemos hacer crecer tu negocio.",
+            "Diseñar la solucion a tu medida.",
+            "Hacemos crecer tu negocio",
+            "Nos recomiendas y ayudas a alguien más"
+            ]}/>
         </div>
         </>
     );
@@ -109,4 +121,20 @@ const Buttonlink2 = styled(Link)`
     margin: 10px 10px;
 `;
 
+const Home2 = styled.div`
+    background-color: #fff;
+    color: #000;
+    padding: 10px 0;
+    height: 100vh;
+`;
 
+const Home2Title = styled.h1`
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 8rem;
+    color: #9f56fd;
+`;
