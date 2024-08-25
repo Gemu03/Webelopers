@@ -1,28 +1,45 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Section from "../components/home/section";
 
 function Home(){
-    return (
-        <div>
-            <Home1>
-                <Home1ContentBox>
-                    <Home1TextContent>
-                        <h3>Hola! Nosotros somos</h3>
-                        <h2>Webelopers</h2>
-                        <h1>La creatividad es nuestro codigo fuente</h1>
-                        <p>Manejo de redes sociales | App moviles | Paginas Web | Soluciones de software</p>
-                    </Home1TextContent>
-                    <Home1ImageContent>
-                        <img src="https://www.webelopers.com/wp-content/uploads/2021/06/webelopers-logo.png" alt="Webelopers Logo" />
-                    </Home1ImageContent>
-                </Home1ContentBox>
-                <Home1Buttons>
-                    <Buttonlink1 to="/">Cotiza con nosotros</Buttonlink1>
-                    <Buttonlink2 to="/">Cotiza nuestros planes</Buttonlink2>
-                </Home1Buttons>
-            </Home1>
 
+    return (
+        <>
+        <Home1>
+            <Home1ContentBox>
+                <Home1TextContent>
+                    <h3>Hola! Nosotros somos</h3>
+                    <h2>Webelopers</h2>
+                    <h1>La creatividad es nuestro codigo fuente</h1>
+                    <p>Manejo de redes sociales | App moviles | Paginas Web | Soluciones de software</p>
+                </Home1TextContent>
+                <Home1ImageContent>
+                    <img src="https://www.webelopers.com/wp-content/uploads/2021/06/webelopers-logo.png" alt="Webelopers Logo" />
+                </Home1ImageContent>
+            </Home1ContentBox>
+            <Home1Buttons>
+                <Buttonlink1 to="/">Cotiza con nosotros</Buttonlink1>
+                <Buttonlink2 to="/">Cotiza nuestros planes</Buttonlink2>
+            </Home1Buttons>
+        </Home1>
+        <Home2>
+            <Home2Title>
+                ¿Por qué elegirnos?
+            </Home2Title>
+        </Home2>
+        <div>
+            <Section bgColor="#0d1117" texts={[
+            "Nos conoces por redes o te referencia un amigo.",
+            "Hablamos y aprendemos acerca de ti.",
+            "Te mostramos, cómo podemos hacer crecer tu negocio.",
+            "Diseñar la solucion a tu medida.",
+            "Hacemos crecer tu negocio",
+            "Nos recomiendas y ayudas a alguien más"
+            ]}/>
+        </div>
+        <div>
             <Home4>
                 <h2>¿Cómo lo hacemos</h2>
                 <h4>Un poco de lo que hacemos</h4>
@@ -63,7 +80,7 @@ function Home(){
                 </div>
             </Home5>
         </div>
-        
+        </>
     );
 }
 
@@ -143,6 +160,25 @@ const Buttonlink2 = styled(Link)`
     padding: 10px 50px;
     border-radius: 5px;
     margin: 10px 10px;
+`;
+
+
+const Home2 = styled.div`
+    background-color: #fff;
+    color: #000;
+    padding: 10px 0;
+    height: 100vh;
+`;
+
+const Home2Title = styled.h1`
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 8rem;
+    color: #9f56fd;
 `;
 
 const Home4 = styled.div`
