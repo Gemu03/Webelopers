@@ -162,6 +162,7 @@ const Buttonlink2 = styled(Link)`
     margin: 10px 10px;
 `;
 
+
 const Home2 = styled.div`
     background-color: #fff;
     color: #000;

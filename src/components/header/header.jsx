@@ -10,14 +10,14 @@ function Header(){
                 <NavMenu>
                     <NavLink to="/">Inicio</NavLink>
                     <NavLink to="/">Servicios</NavLink>
-                    <NavLink to="/">Quienes somos</NavLink>
-                    <NavLink to="/">Proyectos</NavLink>
+                    <NavLink to="/nosotros">Quienes somos</NavLink>
+                    <NavLink to="/portafolio">Proyectos</NavLink>
                     <NavLink to="/">Contactanos</NavLink>
                 </NavMenu>
                 <RightMenu>
                     <NavLink to="/">EN</NavLink>
                     <NavLink to="/">ES</NavLink>
-                    <Buttonlink to="/">Cotiza Ahora</Buttonlink>
+                    <Buttonlink to="/precios">Cotiza Ahora</Buttonlink>
                 </RightMenu>    
             </HeaderContainer>
         </HeaderBackground>
