@@ -62,7 +62,7 @@ const FooterBackground = styled.div`
     background-color: #161c22;
     color: #d0d2d3;
     padding: 10px 0;
-    margin-top: 20px;
+    margin-top: 3em;
 `;
 
 const UpperFooter = styled.div`
@@ -121,6 +121,7 @@ const LeftUpperFooter = styled.div`
 
 const NavMenu = styled.div`
     display: flex;
+    min-width: 90%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
