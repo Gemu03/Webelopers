@@ -35,14 +35,16 @@ const HeaderBackground = styled.div`
 
 const HeaderContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
     padding: 20px;
     background-color: #ffffff;
     color: #000;
-    max-width: 95%;
-    margin: 0 auto;
+    height: fit-content;
+    max-width: 70%;
+    margin: 10px auto 0;
 `;
 
 const Logo = styled.img`
@@ -53,6 +55,7 @@ const Logo = styled.img`
 
 const NavMenu = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-right: 20px;
