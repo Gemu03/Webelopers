@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Section from "../components/home/section";
+import logoMain from "../assets/logo/logo-main.png";
 
 function Home(){
 
@@ -12,11 +13,11 @@ function Home(){
                 <Home1TextContent>
                     <h3>Hola! Nosotros somos</h3>
                     <h2>Webelopers</h2>
-                    <h1>La creatividad es nuestro codigo fuente</h1>
+                    <h1>La creatividad es nuestro código fuente</h1>
                     <p>Manejo de redes sociales | App moviles | Paginas Web | Soluciones de software</p>
                 </Home1TextContent>
                 <Home1ImageContent>
-                    <img src="https://www.webelopers.com/wp-content/uploads/2021/06/webelopers-logo.png" alt="Webelopers Logo" />
+                    <img src={logoMain} alt="Webelopers Logo" />
                 </Home1ImageContent>
             </Home1ContentBox>
             <Home1Buttons>
@@ -109,8 +110,9 @@ const Home1TextContent = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    flex: 0.5;
+    flex: 1.1;
     padding: 20px;
+    text-align: left;
     h3{
         font-size: 1rem;
     }
@@ -119,8 +121,7 @@ const Home1TextContent = styled.div`
         font-size: 2rem;
     }
     h1{
-        
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
     p{
         font-size: 1rem;
@@ -128,8 +129,13 @@ const Home1TextContent = styled.div`
 `;  
 
 const Home1ImageContent = styled.div`
-    flex: 0.5;
+    flex: 1;
     padding: 20px;
+    max-width: fit-content;
+    & img{
+        width: 100%;
+        height: auto;
+    }
 `;
 
 const Home1Buttons = styled.div`

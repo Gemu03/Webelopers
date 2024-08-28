@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import logoFooter from "../../assets/logo/logo-footer.png";
+import logoIg from "../../assets/logo/logo-ig.png";
+import logoFb from "../../assets/logo/logo-fb.png";
+import logoYt from "../../assets/logo/logo-yt.png";
+
 
 function Footer(){
     return (
@@ -13,15 +18,12 @@ function Footer(){
                             Además, ofrecemos software personalizado que se adapta a tus necesitades y te asistimos con tus estrategias de marketing.</p>
                     </LeftSection1>
                     <RightSection1>
-                        <img src="https://www.webelopers.com/wp-content/uploads/2021/06/webelopers-logo.png" alt="Webelopers Logo"/>
+                        <img src={logoFooter} alt="Webelopers Logo"/>
                         <Icons>
                             <h2>Redes Sociales</h2>
-                            <Link to="/"><img src="https://www.webelopers.com/wp-content/uploads/2021/06/facebook.png"
-                                              alt="Facebook"/></Link>
-                            <Link to="/"><img src="https://www.webelopers.com/wp-content/uploads/2021/06/instagram.png"
-                                              alt="Instagram"/></Link>
-                            <Link to="/"><img src="https://www.webelopers.com/wp-content/uploads/2021/06/twitter.png"
-                                              alt="Twitter"/></Link>
+                            <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                            <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                            <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
                         </Icons>
                     </RightSection1>
                 </LeftUpperFooter>
@@ -57,9 +59,10 @@ function Footer(){
 export default Footer;
 
 const FooterBackground = styled.div`
-    background-color: #0d1117;
+    background-color: #161c22;
     color: #d0d2d3;
     padding: 10px 0;
+    margin-top: 20px;
 `;
 
 const UpperFooter = styled.div`
@@ -69,7 +72,6 @@ const UpperFooter = styled.div`
     border-radius: 10px;
     height: 300px;
     padding: 20px;
-    background-color: #0d1117;
     max-width: 95%;
     margin: 0 auto;
 
@@ -169,14 +171,15 @@ const LeftSection1 = styled.div`
 
 const RightSection1 = styled.div`
     display: flex;
+    height: 100%;
     width: 40%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     img{
-        width: 100px;
+        width: 80%;
         object-fit: contain;
-        flex-grow: 4;
+        flex-grow: 0.4;
     }
 `;
 
@@ -216,7 +219,6 @@ const LowerFooter = styled.div`
     align-items: center;
     border-radius: 10px;
     padding: 20px;
-    background-color: #0d1117;
     max-width: 95%;
     margin: 0 auto;
     p{
@@ -230,7 +232,7 @@ const Icons = styled.div`
     justify-content: space-between;
     align-items: center;
     img{
-        width: 30px;
+        width: 20px;
         object-fit: contain;
         margin: 0 10px;
     }
