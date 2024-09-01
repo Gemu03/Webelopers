@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Section from "../components/home/section";
+import EggSection from "../components/home/eggSection";
 import logoMain from "../assets/logo/logo-main.png";
 
 function Home(){
@@ -26,9 +27,7 @@ function Home(){
             </Home1Buttons>
         </Home1>
         <Home2>
-            <Home2Title>
-                ¿Por qué elegirnos?
-            </Home2Title>
+            <EggSection />
         </Home2>
         <div>
             <Section bgColor="#0d1117" texts={[
@@ -174,6 +173,10 @@ const Home2 = styled.div`
     color: #000;
     padding: 10px 0;
     height: 100vh;
+    & h1{
+        font-size: 9rem;
+        color: #9f56fd;
+    }
 `;
 
 const Home2Title = styled.h1`

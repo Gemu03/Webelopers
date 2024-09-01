@@ -21,9 +21,11 @@ function Footer(){
                         <img src={logoFooter} alt="Webelopers Logo"/>
                         <Icons>
                             <h2>Redes Sociales</h2>
-                            <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
-                            <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
-                            <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                            <MediaIcons>
+                                <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                                <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                                <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                            </MediaIcons>
                         </Icons>
                     </RightSection1>
                 </LeftUpperFooter>
@@ -98,6 +100,7 @@ const LeftUpperFooter = styled.div`
     justify-content: space-around;
     h1{
         margin: 0;
+        width: 100%;
         font-size: 40px;
         font-weight: bold;
         text-align: left;
@@ -130,7 +133,7 @@ const NavMenu = styled.div`
 const NavLink = styled(Link)`
     text-decoration: none;
     color: #d0d2d3;
-    margin: 15px 10px;
+    margin: 15px 10px 5px 10px;
 `;
 
 const RightUpperFooter = styled.div`
@@ -189,7 +192,7 @@ const BtnAndSlogan = styled.div`
     width: 100%;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: #d0d2d3;
     h1{
         margin: 0;
@@ -201,10 +204,11 @@ const BtnAndSlogan = styled.div`
 
 const Buttonlink = styled(Link)`
     text-decoration: none;
+    font-weight: bold;
     color: #000;
     background-color: #d0d2d3;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px 50px;
+    border-radius: 15px;
 `;
 
 const Divider = styled.hr`
@@ -230,12 +234,19 @@ const LowerFooter = styled.div`
 
 const Icons = styled.div`
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const MediaIcons = styled.div`
+    display: flex;
     justify-content: space-between;
     align-items: center;
     img{
         width: 20px;
         object-fit: contain;
-        margin: 0 10px;
+        margin: 10px 10px;
     }
 `;
 
