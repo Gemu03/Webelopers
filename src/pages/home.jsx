@@ -29,7 +29,9 @@ function Home(){
         <Home2>
             <EggSection />
         </Home2>
-        <div>
+        <Home3 style={{height: "300vh"}}>
+            <h1>¿Cómo lo hacemos?</h1>
+            <h3>Introduccion...</h3>
             <Section bgColor="#0d1117" texts={[
             "Nos conoces por redes o te referencia un amigo.",
             "Hablamos y aprendemos acerca de ti.",
@@ -38,10 +40,10 @@ function Home(){
             "Hacemos crecer tu negocio",
             "Nos recomiendas y ayudas a alguien más"
             ]}/>
-        </div>
+        </Home3>
         <div>
             <Home4>
-                <h2>¿Cómo lo hacemos</h2>
+                <h2>Our Work</h2>
                 <h4>Un poco de lo que hacemos</h4>
                 <div className="BentoGrid">
                     <div className="BentoItem">1</div>
@@ -188,6 +190,19 @@ const Home2Title = styled.h1`
     height: 100%;
     font-size: 8rem;
     color: #9f56fd;
+`;
+
+const Home3 = styled.div`
+    background-color: #0D1117;
+    color: #fff;
+    & h1{
+        font-size: 8rem;
+    }
+    & h3{
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-bottom: 3em;
+    }
 `;
 
 const Home4 = styled.div`

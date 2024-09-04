@@ -22,7 +22,7 @@ const EggSection = () => {
                 Elegirnos?
             </h1>
             {eggs.map((egg, index) => (
-                <Egg key={index} text={egg.text} top={egg.top} left={egg.left}/>
+                <Egg key={index} text={egg.text} top={egg.top} left={egg.left} color={"#0D1117"} fontSize={"18px"}/>
             ))}
         </div>
     );

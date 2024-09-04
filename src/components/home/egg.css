@@ -1,15 +1,13 @@
 .egg {
     position: absolute;
-    width: 100px;
+    width: 90px;
     background-color: rgba(159, 86, 253, 0.7);
     aspect-ratio: 3.2/4;
     border-radius: 100% / 130% 130% 65% 65%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0D1117;
     font-weight: bold;
-    font-size: 18px;
     text-align: center;
     padding: 10px;
     border: white 1px solid;
