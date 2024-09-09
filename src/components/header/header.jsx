@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import logoHeader from "../../assets/logo/logo-header.png";
 
 function Header(){
     return (
         <HeaderBackground>
             <HeaderContainer>
-                <Logo src="https://www.webelopers.com/wp-content/uploads/2021/06/webelopers-logo.png" alt="Webelopers Logo" />
+                <Logo src={logoHeader} alt="Webelopers Logo" />
                 <NavMenu>
                     <NavLink to="/">Inicio</NavLink>
                     <NavLink to="/">Servicios</NavLink>
@@ -30,32 +31,41 @@ const HeaderBackground = styled.div`
     background-color: #0d1117;
     color: #fff;
     padding: 10px 0;
+    margin-bottom: 3em;
 `;
 
 
 const HeaderContainer = styled.div`
     display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    padding: 20px;
+    padding: 5px 5px;
     background-color: #ffffff;
     color: #000;
-    max-width: 95%;
-    margin: 0 auto;
+    height: fit-content;
+    width: 70%;
+    margin: 10px auto 0;
+    filter: drop-shadow(0 0 0.2rem #000);
 `;
 
 const Logo = styled.img`
-    width: 100px;
+    max-width: 53px;
     object-fit: contain;
-    margin-left: 20px;
+    margin-left: 10px;
 `;
 
 const NavMenu = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 5px;
 `;
 
 const NavLink = styled(Link)`
@@ -76,5 +86,5 @@ const Buttonlink = styled(Link)`
     background-color: #7000ff;
     padding: 10px 20px;
     border-radius: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
 `;

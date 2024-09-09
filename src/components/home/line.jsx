@@ -12,11 +12,19 @@ const Svg = styled.svg`
 `;
 
 const LinePath = styled.path`
-  stroke: #8a2be2;
   stroke-width: 5;
   fill: none;
+`;
+
+const WhiteLinePath = styled(LinePath)`
+  stroke: white;
+`;
+
+const PurpleLinePath = styled(LinePath)`
+  stroke: #8a2be2;
   stroke-dasharray: ${({ strokeDasharray }) => strokeDasharray};
   transition: stroke-dasharray 0.3s ease;
+  filter: drop-shadow(0 0 6px #8a2be2) brightness(1.3);
 `;
 
 const Line = ({ dasharray }) => {
@@ -41,7 +49,8 @@ const Line = ({ dasharray }) => {
 
   return (
     <Svg>
-      <LinePath d={path} strokeDasharray={dasharray} />
+      <WhiteLinePath d={path} />
+      <PurpleLinePath d={path} strokeDasharray={dasharray} />
     </Svg>
   );
 };

@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Section from "../components/home/section";
+import EggSection from "../components/home/eggSection";
+import logoMain from "../assets/logo/logo-main.png";
 
 function Home(){
 
@@ -12,11 +14,11 @@ function Home(){
                 <Home1TextContent>
                     <h3>Hola! Nosotros somos</h3>
                     <h2>Webelopers</h2>
-                    <h1>La creatividad es nuestro codigo fuente</h1>
+                    <h1>La creatividad es nuestro código fuente</h1>
                     <p>Manejo de redes sociales | App moviles | Paginas Web | Soluciones de software</p>
                 </Home1TextContent>
                 <Home1ImageContent>
-                    <img src="https://www.webelopers.com/wp-content/uploads/2021/06/webelopers-logo.png" alt="Webelopers Logo" />
+                    <img src={logoMain} alt="Webelopers Logo" />
                 </Home1ImageContent>
             </Home1ContentBox>
             <Home1Buttons>
@@ -25,11 +27,11 @@ function Home(){
             </Home1Buttons>
         </Home1>
         <Home2>
-            <Home2Title>
-                ¿Por qué elegirnos?
-            </Home2Title>
+            <EggSection />
         </Home2>
-        <div>
+        <Home3 style={{height: "300vh"}}>
+            <h1>¿Cómo lo hacemos?</h1>
+            <h3>Introduccion...</h3>
             <Section bgColor="#0d1117" texts={[
             "Nos conoces por redes o te referencia un amigo.",
             "Hablamos y aprendemos acerca de ti.",
@@ -38,10 +40,10 @@ function Home(){
             "Hacemos crecer tu negocio",
             "Nos recomiendas y ayudas a alguien más"
             ]}/>
-        </div>
+        </Home3>
         <div>
             <Home4>
-                <h2>¿Cómo lo hacemos</h2>
+                <h2>Our Work</h2>
                 <h4>Un poco de lo que hacemos</h4>
                 <div className="BentoGrid">
                     <div className="BentoItem">1</div>
@@ -109,8 +111,9 @@ const Home1TextContent = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    flex: 0.5;
+    flex: 1.1;
     padding: 20px;
+    text-align: left;
     h3{
         font-size: 1rem;
     }
@@ -119,8 +122,7 @@ const Home1TextContent = styled.div`
         font-size: 2rem;
     }
     h1{
-        
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
     p{
         font-size: 1rem;
@@ -128,8 +130,13 @@ const Home1TextContent = styled.div`
 `;  
 
 const Home1ImageContent = styled.div`
-    flex: 0.5;
+    flex: 1;
     padding: 20px;
+    max-width: fit-content;
+    & img{
+        width: 100%;
+        height: auto;
+    }
 `;
 
 const Home1Buttons = styled.div`
@@ -168,6 +175,10 @@ const Home2 = styled.div`
     color: #000;
     padding: 10px 0;
     height: 100vh;
+    & h1{
+        font-size: 9rem;
+        color: #9f56fd;
+    }
 `;
 
 const Home2Title = styled.h1`
@@ -179,6 +190,19 @@ const Home2Title = styled.h1`
     height: 100%;
     font-size: 8rem;
     color: #9f56fd;
+`;
+
+const Home3 = styled.div`
+    background-color: #0D1117;
+    color: #fff;
+    & h1{
+        font-size: 8rem;
+    }
+    & h3{
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-bottom: 3em;
+    }
 `;
 
 const Home4 = styled.div`

@@ -2,10 +2,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Line from './line';
+import Egg from './egg';
 
 const SectionContainer = styled.section`
   position: relative;
-  height: 200vh;
+  height: 220vh;
   background-color: ${({ bgColor }) => bgColor};
 `;
 
@@ -18,7 +19,8 @@ const TextElement = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  width: 250px;
+  width: 300px;
+  text-align: left;
 
   &:nth-child(2) {
     top: 80px;
@@ -32,26 +34,24 @@ const TextElement = styled.div`
 
   &:nth-child(4) {
     top: 350px;
-    left: 400px;
+    left: 150px;
   }
 
   &:nth-child(5) {
-    top: 600px;
-    left: 100px;
+    top: 650px;
+    left: 200px;
   }
 
   &:nth-child(6) {
-    top: 900px;
-    left: 100px;
+    top: 1000px;
+    left: 200px;
   }
 
   &:nth-child(7) {
-    top: 1200px;
-    left: 100px;
+    top: 1350px;
+    left: 200px;
   }
 `;
-
-
 
 const Section = ({ bgColor, texts }) => {
   const [dasharray, setDasharray] = useState('0, 1000');
@@ -81,9 +81,15 @@ const Section = ({ bgColor, texts }) => {
       {texts.map((text, index) => (
         <TextElement key={index}>
           <div>
-            <span style={{ fontSize: '32px' }}>{index + 1}</span>
-            <p style={{ fontSize: index > 2 ? '24px' : '18px'}}>{text}</p>
-            {index > 2 && <p>Subtitulo</p>}
+            <Egg key={index} text={"<"+(index+1)+">"} top={"50%"} left={"50%"} color={"white"} fontSize={"30px"}/>
+            {index > 2 && <div style={{transform: "translate(5%,65%)", width:"400px", height:"200px"}}>
+              <h2 style={{fontSize: "24px"}}>{text}</h2>
+              <p style={{fontSize:"18px"}}>Subtitulo</p>
+              <p>Descripcion de seccion</p>
+            </div>}
+            {index <= 2 && <div style={{transform: "translate(45%,10%)"}}>
+              <p style={{fontSize:"18px"}}>{text}</p>
+            </div>}
           </div>
         </TextElement>
       ))}
