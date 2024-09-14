@@ -62,7 +62,7 @@ export default Footer;
 
 const FooterBackground = styled.div`
     background-color: #161c22;
-    color: #d0d2d3;
+    color: #d0d2d3; 
     padding: 10px 0;
     margin-top: 3em;
 `;
@@ -125,6 +125,7 @@ const LeftUpperFooter = styled.div`
 const NavMenu = styled.div`
     display: flex;
     min-width: 90%;
+    height: 50px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -134,6 +135,18 @@ const NavLink = styled(Link)`
     text-decoration: none;
     color: #d0d2d3;
     margin: 15px 10px 5px 10px;
+    font-weight: bold;
+    transition: 0.3s;
+    &:hover{
+        &::after{
+            position: static;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #d0d2d3
+        }
+    }
 `;
 
 const RightUpperFooter = styled.div`
