@@ -4,11 +4,14 @@ import styled from "styled-components";
 import Section from "../components/home/section";
 import EggSection from "../components/home/eggSection";
 import logoMain from "../assets/logo/logo-main.png";
+import logoWhatsapp from "../assets/logo/logo-wp.png";
+import Carousel from "../components/home/carousel";
 
 function Home(){
 
     return (
         <>
+        <WhatsAppButton src={logoWhatsapp}/>
         <Home1>
             <Home1ContentBox>
                 <Home1TextContent>
@@ -62,16 +65,7 @@ function Home(){
                 <p>¿Quieres conocer más sobre nuestros proyectos?</p>
                 <div className="carrousel">
                     <h4>Marcas que confiaron en nosotros</h4>
-                    <div className="imagenes">
-                        <img src=" https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="FerreteriaJF" />
-                        <img src=" https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="FerreteriaJF" />
-                        <img src=" https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="FerreteriaJF" />
-                        <img src=" https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="FerreteriaJF" />
-                        <img src=" https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="FerreteriaJF" />
-                        <img src=" https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="FerreteriaJF" />
-                        <img src=" https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="FerreteriaJF" />
-
-                    </div>
+                    <Carousel />
                 </div>
             </Home4>
             <Home5>
@@ -286,3 +280,17 @@ const Home5 = styled.div`
         }
     }
 `;
+
+const WhatsAppButton = styled.img`
+    position: fixed;
+    z-index: 1000;
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+        transform: scale(1.1);
+    }
+;`
