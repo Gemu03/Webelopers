@@ -8,6 +8,8 @@ import profileImage3 from "../assets/cards/profile3.png"
 import logoIg from "../assets/logo/logo-ig.png";
 import logoFb from "../assets/logo/logo-fb.png";
 import logoYt from "../assets/logo/logo-yt.png";
+
+import SentenceDisplay from "../components/nosotros/sentencedisplay";
 import PersonCard from "../components/nosotros/personcard.jsx";
 import {Link} from "react-router-dom";
 
@@ -103,6 +105,15 @@ const Nosotros = () => {
                     </MediaIcons>
                 </Person>
             </GridCardsPersonas>
+            <PorqueElegirnos>
+                <LeftSection>
+                    <h1>¿Por qué elegirnos?</h1>
+                    <p>Lo que nos diferencia de las opciones de ahi afuera</p>
+                </LeftSection>
+                <RightSection>
+                    <SentenceDisplay duration={8000} />
+                </RightSection>
+            </PorqueElegirnos>
         </PagNosotros>
 
     );
@@ -195,5 +206,45 @@ const MediaIcons = styled.div`
         width: 20px;
         object-fit: contain;
         margin: 10px 10px 10px 0px;
+    }
+`;
+
+const PorqueElegirnos = styled.section`
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 7.5%;
+`;
+
+const LeftSection = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    text-align: left;
+    h1{
+        font-size: 4em;
+        font-weight: bolder;
+        margin: 0;
+    }
+    p{
+        font-size: 1em;
+    }
+`;
+
+const RightSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 30%;
+    height: 100%;
+    h1{
+        font-size: 1.5em;
+        font-weight: normal;
     }
 `;

@@ -10,7 +10,7 @@
     font-weight: bold;
     text-align: center;
     padding: 10px;
-    border: white 1px solid;
+    border: white 2px solid;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
 }
