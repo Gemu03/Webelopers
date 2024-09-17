@@ -1,6 +1,16 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from 'styled-components';
 
+import profileImage1 from "../assets/cards/profile1.png"
+import profileImage2 from "../assets/cards/profile2.png"
+import profileImage3 from "../assets/cards/profile3.png"
+
+import logoIg from "../assets/logo/logo-ig.png";
+import logoFb from "../assets/logo/logo-fb.png";
+import logoYt from "../assets/logo/logo-yt.png";
+import PersonCard from "../components/nosotros/personcard.jsx";
+import {Link} from "react-router-dom";
+
 const Nosotros = () => {
     useEffect(() => {
         document.title = "Nosotros | Mi sitio web";
@@ -18,15 +28,80 @@ const Nosotros = () => {
             </Limites>
             <MentesDetras>
                 <h2>Las mentes detrás de la magia</h2>
-                <p>Somos un equipo de Ingeniero</p>
+                <p>Somos un equipo de Ingenieros Informáticos</p>
             </MentesDetras>
             <GridCardsPersonas>
-                <CardPersona>Gio</CardPersona>
-                <CardPersona>John</CardPersona>
-                <CardPersona>Jose</CardPersona>
-                <CardPersona>Gio</CardPersona>
-                <CardPersona>John</CardPersona>
-                <CardPersona>Jose</CardPersona>
+                <Person>
+                    <PersonCard
+                        image={profileImage1}
+                    />
+                    <p>Descripcion personal de cada uno</p>
+                    <MediaIcons>
+                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                    </MediaIcons>
+                </Person>
+
+                <Person style={{transform:"translateY(-10%)"}}>
+                    <PersonCard
+                        image={profileImage2}
+                    />
+                    <p>Descripcion personal de cada uno</p>
+                    <MediaIcons>
+                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                    </MediaIcons>
+                </Person>
+
+                <Person>
+                    <PersonCard
+                        image={profileImage3}
+                    />
+                    <p>Descripcion personal de cada uno</p>
+                    <MediaIcons>
+                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                    </MediaIcons>
+                </Person>
+
+                <Person>
+                    <PersonCard
+                        image={profileImage1}
+                    />
+                    <p>Descripcion personal de cada uno</p>
+                    <MediaIcons>
+                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                    </MediaIcons>
+                </Person>
+
+                <Person style={{transform:"translateY(-10%)"}}>
+                    <PersonCard
+                        image={profileImage2}
+                    />
+                    <p>Descripcion personal de cada uno</p>
+                    <MediaIcons>
+                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                    </MediaIcons>
+                </Person>
+
+                <Person>
+                    <PersonCard
+                        image={profileImage3}
+                    />
+                    <p>Descripcion personal de cada uno</p>
+                    <MediaIcons>
+                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
+                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
+                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
+                    </MediaIcons>
+                </Person>
             </GridCardsPersonas>
         </PagNosotros>
 
@@ -63,7 +138,6 @@ const Limites = styled.section`
     background-color: transparent;
     border-radius: 1em;
     padding: 3em;
-    margin: 0em;
     max-width: 40vw;
     background: rgb(159,86,253);
     background: radial-gradient(circle, rgba(159,86,253,1) 10%, rgba(159,86,253,0) 58%);
@@ -75,20 +149,24 @@ const Limites = styled.section`
 `;
 
 const MentesDetras = styled.section`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 70vw;
+    height: 30vh;
     margin-top: 7em;
-    max-width: 70vw;
-    background-color: ${ColorPalette.contenedoresOscuro};
-    border: 2px solid ${ColorPalette.contenedores};
+    text-align: left;
     border-radius: 10px;
     color: white;
-    padding: 3em;
+    padding: 2em;
     h2{
-        font-size: 2.8em;
+        max-width: 30vw;
+        font-size: 3em;
         margin: 0;
-        font-weight: 400;
+        font-weight: bolder;
     }
     p{
+        max-width: 25vw;
         font-size: 1.5em;
     }
 `;
@@ -96,22 +174,26 @@ const MentesDetras = styled.section`
 const GridCardsPersonas = styled.section`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 10vw;
     margin-top: 5em;
 `;
 
-const CardPersona = styled.div`
-    background-color: ${ColorPalette.contenedoresOscuro};
-    border: 2px solid ${ColorPalette.contenedores};
-    border-radius: 10px;
+const Person = styled.div`
     color: white;
-    padding: 3em;
-    h2{
-        font-size: 2.8em;
-        margin: 0;
-        font-weight: 400;
-    }
+    max-width: 250px;
     p{
-        font-size: 1.5em;
+        text-align: left;
+        font-size: 16px;
+    }
+`;
+
+const MediaIcons = styled.div`
+    display: flex;
+    justify-content: flex-start ;
+    align-items: center;
+    img{
+        width: 20px;
+        object-fit: contain;
+        margin: 10px 10px 10px 0px;
     }
 `;

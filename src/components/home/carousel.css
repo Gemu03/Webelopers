@@ -7,6 +7,9 @@
     display: flex;
     animation: scroll 10s linear infinite;
     width: calc(220px * 8);
+    &:hover {
+        animation-play-state: paused;
+    }
 }
 
 .carousel-item {

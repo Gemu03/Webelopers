@@ -1,0 +1,17 @@
+.person-card {
+    width: 250px;
+    aspect-ratio: 362/485;
+    perspective: 1000px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-size: cover;
+    transition: transform 0.1s ease-out;
+    text-align: center;
+    color: white;
+}
+
+.person-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
