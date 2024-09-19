@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
@@ -8,11 +7,13 @@ import Portafolio from './pages/portafolio';
 import Nosotros from './pages/nosotros';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <WhatsAppButton/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/precios" element={<Precios />} />

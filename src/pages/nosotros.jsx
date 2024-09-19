@@ -33,77 +33,55 @@ const Nosotros = () => {
                 <p>Somos un equipo de Ingenieros Informáticos</p>
             </MentesDetras>
             <GridCardsPersonas>
-                <Person>
-                    <PersonCard
-                        image={profileImage1}
-                    />
-                    <p>Descripcion personal de cada uno</p>
-                    <MediaIcons>
-                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
-                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
-                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
-                    </MediaIcons>
-                </Person>
+                <PersonCard
+                    image={profileImage1}
+                    description={"Descripcion personal de cada uno"}
+                    urlIG="/"
+                    urlFB="/"
+                    urlYT="/"
+                />
 
-                <Person style={{transform:"translateY(-10%)"}}>
-                    <PersonCard
-                        image={profileImage2}
-                    />
-                    <p>Descripcion personal de cada uno</p>
-                    <MediaIcons>
-                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
-                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
-                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
-                    </MediaIcons>
-                </Person>
+                <PersonCard
+                    image={profileImage2}
+                    description={"Descripcion personal de cada uno"}
+                    urlIG="/"
+                    urlFB="/"
+                    urlYT="/"
+                    translate={"-10%"}
+                />
 
-                <Person>
-                    <PersonCard
-                        image={profileImage3}
-                    />
-                    <p>Descripcion personal de cada uno</p>
-                    <MediaIcons>
-                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
-                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
-                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
-                    </MediaIcons>
-                </Person>
+                <PersonCard
+                    image={profileImage3}
+                    description={"Descripcion personal de cada uno"}
+                    urlIG="/"
+                    urlFB="/"
+                    urlYT="/"
+                />
 
-                <Person>
-                    <PersonCard
-                        image={profileImage1}
-                    />
-                    <p>Descripcion personal de cada uno</p>
-                    <MediaIcons>
-                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
-                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
-                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
-                    </MediaIcons>
-                </Person>
+                <PersonCard
+                    image={profileImage1}
+                    description={"Descripcion personal de cada uno"}
+                    urlIG="/"
+                    urlFB="/"
+                    urlYT="/"
+                />
 
-                <Person style={{transform:"translateY(-10%)"}}>
-                    <PersonCard
-                        image={profileImage2}
-                    />
-                    <p>Descripcion personal de cada uno</p>
-                    <MediaIcons>
-                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
-                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
-                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
-                    </MediaIcons>
-                </Person>
+                <PersonCard
+                    image={profileImage2}
+                    description={"Descripcion personal de cada uno"}
+                    urlIG="/"
+                    urlFB="/"
+                    urlYT="/"
+                    translate={"-10%"}
+                />
 
-                <Person>
-                    <PersonCard
-                        image={profileImage3}
-                    />
-                    <p>Descripcion personal de cada uno</p>
-                    <MediaIcons>
-                        <Link to="/"><img src={logoIg} alt="Instagram"/></Link>
-                        <Link to="/"><img src={logoFb} alt="Facebook"/></Link>
-                        <Link to="/"><img src={logoYt} alt="YouTube"/></Link>
-                    </MediaIcons>
-                </Person>
+                <PersonCard
+                    image={profileImage3}
+                    description={"Descripcion personal de cada uno"}
+                    urlIG="/"
+                    urlFB="/"
+                    urlYT="/"
+                />
             </GridCardsPersonas>
             <PorqueElegirnos>
                 <LeftSection>
@@ -189,26 +167,6 @@ const GridCardsPersonas = styled.section`
     margin-top: 5em;
 `;
 
-const Person = styled.div`
-    color: white;
-    max-width: 250px;
-    p{
-        text-align: left;
-        font-size: 16px;
-    }
-`;
-
-const MediaIcons = styled.div`
-    display: flex;
-    justify-content: flex-start ;
-    align-items: center;
-    img{
-        width: 20px;
-        object-fit: contain;
-        margin: 10px 10px 10px 0px;
-    }
-`;
-
 const PorqueElegirnos = styled.section`
     width: 100%;
     height: 80vh;
@@ -232,7 +190,7 @@ const LeftSection = styled.div`
         margin: 0;
     }
     p{
-        font-size: 1em;
+        font-size: 1.1em;
     }
 `;
 

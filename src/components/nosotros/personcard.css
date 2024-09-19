@@ -15,3 +15,22 @@
     transition: transform 0.2s ease;
 }
 
+.media{
+    display: flex;
+    justify-content: flex-start ;
+    align-items: center;
+    img{
+        width: 20px;
+        object-fit: contain;
+        margin: 10px 10px 10px 0px;
+    }
+}
+
+.person{
+    color: white;
+    max-width: 250px;
+    p{
+        text-align: left;
+        font-size: 16px;
+    }
+}
